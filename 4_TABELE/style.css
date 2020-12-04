@@ -3,8 +3,35 @@ th{
 }
 td{
     border: 2px solid black;
+    padding: 10px;
+    vertical-align: top;
+    text-align: center;
 }
 
 #prviRed {
     color: red;
+}
+table {
+    margin-top: 50px;
+}
+
+#tabelaZadatak tr:nth-child(even) {
+    background-color: yellow;
+}
+#tabelaZadatak tr:nth-child(even) {
+    font-style: italic;
+}
+#tabelaZadatak tr:nth-child(3n) {
+    color: blue;
+}
+#tabelaZadatak tr:nth-child(even):hover {
+    color: yellow;
+}
+#vezba1, #vezba1 td {
+    border: 2px solid blue;
+}
+
+#vezba1 {
+    background-image: url(https://previews.123rf.com/images/kwasny221/kwasny2211709/kwasny221170900444/85039975-wooden-table-background.jpg);
+    background-repeat: no-repeat;
 }
