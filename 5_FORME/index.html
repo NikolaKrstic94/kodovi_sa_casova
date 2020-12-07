@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORME</title>
+</head>
+<body>
+    <form action="#">
+        <fieldset>
+            <legend>Prijava</legend>
+            <p>
+                <label for="ime">Ime</label>
+                <input type="text" id="ime" placeholder="ime" maxlength="5">
+            </p>
+            <p>
+                <label for="prezime">Prezime</label>
+                <input type="text" id="prezime" placeholder="prezime">
+            </p>
+            <p>
+                <label for="">Korisnicko Ime</label>
+                <input type="text">
+            </p>
+            <p>
+                <label for="email">email</label>
+                <input type="email">
+            </p>
+            <p>
+                <label for="lozinka">Lozinka</label>
+                <input type="password">
+            </p>
+            <p>
+                <label for="">Godine</label>
+                <input type="number" name="" id="" min="18" max="115" step="1" value="18">
+            </p>
+            <p>
+                <label for="">Datum</label>
+                <input type="date" name="" id="">
+            </p>
+        </fieldset>
+        <fieldset>
+            <legend>Ostale informacije</legend>
+            <p>Izaberite pol</p>
+            <label for="pol">Muski</label>
+            <input type="radio" name="pol">
+            <label for="pol">Zenski</label>
+            <input type="radio" name="pol">
+            <p>
+                <label for="">Placanje</label>
+                <input type="radio" name="placanje" id="kes" value="Kes" checked>
+                <label for="kes">Kes</label>
+                <input type="radio" name="placanje" id="" value="Kartica">
+            </p>
+            <p>
+                <label for="">Odaberite dizajn</label>
+                <input type="color" name="" id="">
+            </p>
+            <p>
+                <label for="">Odaberite fajl za dizajn</label>
+                <input type="file" name="" id="">
+            </p>
+            <p>
+                <label for="">Odaberite grad</label>
+                <select name="" id="">
+                    <optgroup label="Juzna Srbija">
+                        <option value="">Nis</option>
+                        <option value="">Vranje</option>
+                        <option value="">Leskovac</option>
+                    </optgroup>
+                    <optgroup label="Centralna Srbija">
+                        <option value="">Beograd</option>
+                        <option value="">Kragujevac</option>
+                        <option value="">Krusevac</option>
+                    </optgroup>
+                    <optgroup label="Severna Srbija">
+                        <option value="">Novi Sad</option>
+                        <option value="">Subotica</option>
+                    </optgroup>
+                </select>
+            </p>
+        </fieldset>
+        <button>Submit</button>
+    </form>
+</body>
+</html>

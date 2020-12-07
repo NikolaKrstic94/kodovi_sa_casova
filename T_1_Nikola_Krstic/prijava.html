@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prijava</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="navigacioni_meni">
+        <span class="span_nav_menu"><a href="index.html">Pocetna</a></span>
+        <span class="span_nav_menu"><a href="onama.html">O nama</a></span>
+        <span class="span_nav_menu"><a href="prijava.html">Prijava</a></span>
+    </div>
+    <form id="forma">
+        <fieldset>
+            <legend>Informacije o kandidatu</legend>
+            <p>
+                <label for="Ime">Ime:</label> <br>
+                <input type="text" id="ime">
+            </p>
+            <p>
+                <label for="Prezime">Prezime:</label> <br>
+                <input type="text" id="prezime">    
+            </p>
+        </fieldset>
+        <fieldset>
+            <legend>Informacije o kursu</legend>
+            <p>
+                <label for="mesto">Mesto:</label> <br>
+                <select name="grad" id="grad">
+                    <option value="Nis">Nis</option>
+                    <option value="Beograd">Beograd</option>
+                </select>
+            </p>
+            <p>
+                <label for="kurs">Kurs:</label>
+                <input type="radio" name="kurs" id="kurs">Javascript
+                <input type="radio" name="kurs">QA
+            </p>
+        </fieldset>
+        <input type="checkbox" id="newsletter" checked>
+        <label for="newsletter">
+            Zelim da se prijavim na newsletter
+        </label>
+        <p>
+            <input id="dugme_prijava" type="submit" value="Prijavi Se">
+        </p>
+    </form>
+</body>
+</html>

@@ -1,0 +1,93 @@
+img{
+    width: 100px;
+}
+table {
+    text-align: center;
+}
+.o_nama{
+    margin: 0 auto;
+    text-align: center;
+}
+.navigacioni_meni {
+    font-size: 30px;
+    font-weight: bold;
+    padding-left: 60px;
+    text-align: center;
+    margin-top: 30px;
+}
+.navigacioni_meni a {
+    padding: 20px;
+}
+.span_nav_menu {
+    padding-left: 30px;
+
+}
+.obojene_reci {
+    color:rgb(83, 73, 212);
+}
+.podvucene_reci {
+    text-decoration: underline;
+}
+.grad{
+    color: orange;
+}
+.qa {
+    color: green;
+}
+
+#email_slika{
+    width: 150px;
+    border: 7px solid orange;
+}
+
+.o_nama h4 {
+    color: orange;
+}
+.span_nav_menu a:link {
+  text-decoration: none;
+  color: black;
+}
+
+.span_nav_menu a:visited {
+  text-decoration: none;
+  color: black;
+}
+
+.span_nav_menu a:hover {
+  text-decoration: none;
+}
+
+.span_nav_menu a:active {
+  text-decoration: none;
+  color: black;
+}
+.span_nav_menu a:hover {
+  background-color: orange;
+}
+.o_nama {
+    font-weight: bold;
+}
+.o_nama a{
+    color: green;
+}
+
+.o_nama a:visited{
+    color: red;
+}
+#dugme_prijava{
+    background-color: orange;
+    color: white;
+    padding: 15px;
+    border-style: none;
+    font-size: 15px;
+}
+
+input[type=text], select {
+width: 100%;
+}
+
+#forma {
+    width: 60%;
+    margin: 50px auto;
+
+}
