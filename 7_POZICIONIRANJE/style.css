@@ -1,0 +1,87 @@
+* {
+    box-sizing: border-box;
+    margin: 1px;
+    padding:0;
+}
+
+#div1 {
+    background-color: brown;
+    width: 400px;
+    height: 50px;
+    position: relative; 
+    top: 200px;
+    left: 500px;
+}
+
+
+.news {
+    background-color: chocolate;
+    width: 600px;
+    height: 300px;
+    position: relative;
+    left: 60px;
+    top: 200px;
+}
+.news img {
+    position: absolute; /* pomeranje u odnosu na roditeljski element */
+    left: 200px;
+    top: 50px; 
+    }
+.news h5 {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    margin: 0;
+} 
+
+header {
+    background-image: url("https://i.imgur.com/X84qrTZ.png");
+    background-size: auto;
+    position: fixed;
+    height: 150px;
+    width: 100%;
+    vertical-align: middle;
+    vertical-align: middle;
+    top: 0;
+}
+ h3{
+     padding: 0;
+     margin:0;
+     color: #2E90FB;
+    position: absolute;
+    text-align: center;
+    left: 50%;
+    top: 50%;
+    /* margin-left: -56.1px; */
+    /* margin-top: -11px; */
+    transform: translate(-50%, -50%);
+    /* transform: translateX(-50%); */
+
+ }
+footer {
+    position: fixed;
+    background-color: #2E90FB;
+    bottom: 0;
+    width: 100%;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+#p1 {
+    background-color: darkblue;
+    border: 5px solid red;
+    z-index: 1;
+    position: absolute;
+    top: 200px;
+}
+#p2 {
+    background-color: rgb(167, 167, 218);
+    border: 5px solid red;
+    z-index: 2;
+    position: relative;
+    top: 200px;
+}
+
+ li {
+    list-style-type: none;
+}

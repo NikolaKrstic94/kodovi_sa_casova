@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>float</title>
+    <style>
+        p {
+            background-color: rgb(209, 159, 255);
+        }
+        #float p {
+            float: left;
+            width: 250px;
+            margin: 20px;
+        }
+        #float p:first-child {
+            float: left;
+        }
+        #float p:nth-child(2) {
+            float: right;
+        }
+        #float {
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <p>Neki test paragraf....</p>
+    <div id="float">
+        <p>Tekst prvog paragrafa</p>
+        <p>Tekst drugog paragrafa</p>
+        <p>Tekst treceg paragrafa</p>
+    </div>
+    <p>Jos jedan test paragraf...</p>
+</body>
+</html>
