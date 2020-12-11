@@ -1,0 +1,146 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+body {
+   width: 75%;
+   margin: 0 auto;
+   font-family: 'Oswald', sans-serif;
+   font-size: 20px;
+}
+
+img {
+   width: 33%;
+   height: 100%;
+}
+header,footer {
+   height: 5vh;
+   background-color: #21FFFE;
+   /* display: flex; */
+   /* align-items: center; */
+   text-align: center;
+   font-size: 15px;
+}
+nav,article {
+   height: 25vh;
+}
+article {
+   background: rgb(255,255,255);
+   background: linear-gradient(96deg, #1bcfd1 0%, white 100%);
+   font-size: 20px;
+   padding: 15px;
+}
+article p {
+   padding-top: 20px;
+}
+
+nav {
+   background-color: #19CED0;
+}
+ion-icon {
+   font-size: 25px;
+}
+nav ul {
+   list-style-type: none;
+   display: inline-block;
+   height: 100%;
+   width: 100%;
+}
+nav ul li {
+   height: 33.33%;
+   text-align: center;
+}
+nav ul li a {
+   text-decoration: none;
+   color: black;
+   font-size: 25px;
+   font-weight: bold;
+   display: flex;
+   align-items: center;
+   text-align: center;
+   justify-content: center;
+   height: 100%;
+   width: 100%;
+   vertical-align: middle;
+}
+nav ul li a:hover {
+   background-color: #18a4a7;
+}
+.images {
+   height: 32vh;
+}
+.sections_div {
+   height: 33vh;
+   background: rgb(255,255,255);
+   background: linear-gradient(360deg, rgba(255,255,255,1) 0%, rgba(27,207,209,1) 100%);
+
+}
+section {
+   height: 100%;
+}
+
+.row{
+   width: 100%;
+   overflow: hidden;
+}
+[class*="col-"] {
+   float:left;
+   border-collapse: collapse;
+}
+
+/* Dizajn za mobilni telefon */
+@media only screen and (min-width:0) and (max-width:700px) {
+ [class*="col-"] {
+    width: 100%;
+    height: 100%;
+ }
+ .sections_div {
+    height: 100%;
+ }
+ img {
+    width: 100%;
+ }
+}
+/* Dizajn za desktop */
+@media only screen and (min-width:701px) and (max-width:100vw) {
+   .col-1 {
+      width: 8.33%;
+   }
+   .col-2 {
+      width: 16.66%;
+   }
+   .col-3 {
+      width: 25%;
+   }
+   .col-4 {
+      width: 33.33%;
+   }
+   .col-5 {
+      width: 41.66%;
+   }
+   .col-6 {
+      width: 50%;
+   }
+   .col-7 {
+      width: 58.33%;
+   }
+   .col-8 {
+      width: 66.66%;
+   }
+   .col-9 {
+      width: 75%;
+   }
+   .col-10 {
+      width: 83.33%;
+   }
+   .col-11 {
+      width:91.66%
+   }
+   .col-12 {
+      width: 100%;
+   }
+   img {
+      width: 100%
+   }
+}
