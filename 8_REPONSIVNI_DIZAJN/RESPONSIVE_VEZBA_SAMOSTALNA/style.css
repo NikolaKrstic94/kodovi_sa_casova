@@ -16,15 +16,16 @@ img {
 }
 header,footer {
    height: 5vh;
-   background-color: #21FFFE;
+   background-color: #21fffe;
    /* display: flex; */
    /* align-items: center; */
    text-align: center;
    font-size: 15px;
 }
-nav,article {
+nav, article{
    height: 25vh;
 }
+
 article {
    background: rgb(255,255,255);
    background: linear-gradient(96deg, #1bcfd1 0%, white 100%);
