@@ -135,8 +135,14 @@ footer h4 {
    margin-left: 20px;
 }
 
-
-
+.desna_donja_slika {
+   float: right;
+   width: 100%;
+}
+/* .lower_div img {
+   clear: both;
+   float: none;
+} */
 
 
 /* **** OVO JE ZA MOBILNE DIZAJN **** */
