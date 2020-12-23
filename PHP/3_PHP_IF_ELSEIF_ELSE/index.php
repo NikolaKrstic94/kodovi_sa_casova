@@ -124,8 +124,8 @@ else {
 echo "<br>"; echo "<br>";
 
 // zadatak 18
-$broj = 12;
-if(fmod($broj,1) == 0){  // pita da li je 123 %10 = 
+$broj = 12.1;
+if(fmod($broj,1) == 0){  //
    echo "<p>broj je ceo</p>";
 }
 else {

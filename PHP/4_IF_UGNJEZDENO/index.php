@@ -11,20 +11,34 @@
    </style>
 </head>
 <body>
-   <div>
-      Zdravo kako si?
-   </div>
-   <div>
-      Ucim PHP
-      <?php
-         echo ":(";
-       ?>
-   </div>
-
-   <p>Ovo je prvi paragraf</p>
-
-
-
+   <?php
+      $br1 = 5;
+      $br2 = 7;
+      // if($br1 > $br2) {
+      //    echo "Broj $br1 je veci";
+      //    if($br1 == 0) {
+      //       echo " i paran je";
+      //    }
+      //    else {
+      //       echo " i neparan je";
+      //    }
+      // }
+      // elseif($br2 > $br1) {
+      //    echo "Broj $br2 je veci";
+      //    if($br2 %2 == 0) {
+      //       echo " i paran je";
+      //    }
+      //    else {
+      //       echo " i neparan je";
+      //    }
+      // }
+      // else {
+      //    echo "Brojevi $br1 i $br2 su jednaki";
+      // }
+      if($br1 >= 0 && $br2>=0) {
+         echo "brojevi $br1 i $br2 su nenegativni";
+      }
+    ?>
 
 </body>
 </html>
