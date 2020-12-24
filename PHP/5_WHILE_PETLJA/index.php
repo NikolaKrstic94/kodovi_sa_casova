@@ -147,12 +147,24 @@ echo "Proizvod brojeva od 2 do 6 je $proizvod";
    echo "Broj deljivih broja sa brojem $k je $brDeljivih";
    echo "<br>";
    echo "<br>";
-   // zad 12
-   $n = 5;   
-   if((($n % 3) == 0) && (($n % 2) == 0)){
-      echo "broj $n nije prost";
+
+
+   // 2. nacin
+   $n = 83;
+   $br = 2;
+   $prost = true;
+   while($br  <= $n/2){
+      if($n % $br == 0) {
+         $prost = false;
+         break;
+      }
+      $br++;
+   } 
+   if($prost) {
+      echo "Broj $n je prost <hr>";
    }
    else {
-      echo "Broj $n je prost";
+      echo "Broj $n nije prost <hr>";
    }
+
 ?>
