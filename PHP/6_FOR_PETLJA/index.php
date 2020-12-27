@@ -4,6 +4,11 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Document</title>
+   <style>
+   img {
+      width: 50px;
+   }
+      </style>
 </head>
 <body>
    <?php
@@ -114,9 +119,10 @@ echo "$suma";
    echo "Proizvod je $proizvod";
    echo "<br>";echo "<br>";
 // zad 10
-for($i = 1; $i <= 3; $i++){
-   
-   echo "<img src='$i.jpg'> <br>";
+$n = 8;
+for($i = 0; $i < $n; $i++){
+   $broj = $i % 3 +1;
+ echo "<img src='$broj'>";
 }
    echo "<br>";echo "<br>";
 // zad 11
@@ -126,10 +132,143 @@ for($i = 1; $i <= 30; $i++){
       $suma += $i;  // 9+18+27 = 54
    }
 }
-echo "Suma svih brojeva deljivih sa 9 je $suma";
+echo "Zad 11) Suma svih brojeva deljivih sa 9 je $suma";
 
    echo "<br>";echo "<br>";
 // zad 12
+$proizvod = 1;
+for($i = 20; $i <= 100; $i++){
+   if($i % 11 == 0) {
+      $proizvod *= $i;
+   }
+}
+echo "12) Proizvod svih brojeva deljivih sa 11 u intervalu od 20 do 100 je: $proizvod";
+
+   echo "<br>";echo "<br>";
+// zad 13
+$brojDelioca = 0;
+for($i = 5; $i <= 150; $i++){
+   if($i % 13 == 0){
+      $brojDelioca++;
+   }
+}
+echo "zad 13: Broj delioca je $brojDelioca ";
+
+echo "<br>";echo "<br>";
+// zad 14
+$n = 8;
+$m = 10;
+$sumaBrojeva = 0;
+$ukupnoBrojeva = 0;
+for($i =$n; $i <= $m; $i++){
+   $sumaBrojeva += $i;
+   $ukupnoBrojeva++;
+}
+echo "<br>";echo "<br>";
+
+$arSredina = $sumaBrojeva / $ukupnoBrojeva;
+echo "14) $arSredina je aritmeticka sredina brojeva od $n do $m";
+
+echo "<br>";echo "<br>";
+// zad 15
+$n = -5;
+$m = 3;
+$pozitivniBrojevi = 0;
+$negativniBrojevi = 0;
+for($i = $n; $i <= $m; $i++){
+   if($i < 0) {
+      $negativniBrojevi++;
+   }
+   elseif($i > 0){
+      $pozitivniBrojevi++;
+   }
+}
+echo "<p>15) Pozitivnih ima $pozitivniBrojevi a negativnih: $negativniBrojevi</p>";
+
+echo "<br>";echo "<br>";
+// zad 16
+$brDeliocaTriPet = 0;
+for($i = 5; $i <= 50; $i++){
+   if($i % 3 == 0){
+      $brDeliocaTriPet++;
+   }
+   if(($i % 3 != 0) && ($i % 5 == 0)){
+      $brDeliocaTriPet++;
+   }
+}
+echo " 16) $brDeliocaTriPet hej";
+
+echo "<br>";echo "<br>";
+// zad 17
+
+$n = 4;
+$m = 24;
+$suma = 0;
+$brojacCetiri = 0;
+for($i = $n; $i <=$m; $i++){
+   if($i % 10 == 4){
+      $suma += $i;
+      $brojacCetiri++;
+   }
+}
+echo "17) Ukupno broja sa poslednjom cifrom 4 je: $brojacCetiri a suma svih njih je $suma";
+
+echo "<br>";echo "<br>";
+// zad 18
+
+$n = 10;
+$m = 30;
+$a = 3;
+echo "18) Brojevi od $n do $m koji su deljivi sa $a su ";
+
+for($i = $n; $i <= $m; $i++){
+   if($i % $a == 0){
+      echo " $i";
+   }
+}
+echo "<br>";echo "<br>";
+// zad 19
+$n = 10;
+$m = 30;
+$a = 3;
+echo "19) Brojevi od $n do $m koji nisu deljivi sa $a su: ";
+for($i = $n; $i <= $m; $i++){
+   if($i % $a != 0){
+      echo "$i ";
+   }
+}
+echo "<br>";echo "<br>";
+// zad 20) Odrediti sumu brojeva od $n do $m koji
+// nisu deljivi brojem $a.
+$n = 10;
+$m = 30;
+$a = 3;
+$suma = 0;
+for($i = $n; $i <= $m; $i++){
+   if($i % $a != 0){
+      $suma += $i;
+   }
+}
+echo "<p>Zad 20) Suma je $suma</p>";
+// 21) Odrediti proizvod brojeva od $n do $m koji su deljivi
+// brojem $a, a nisu brojem $b.
+$n = 10;
+$m = 30;
+$a = 3;
+$b = 5;
+$proizvod = 1;
+if($a * $b != 0){
+   for($i = $n; $i <= $m; $i ++){
+      if($i % $a == 0 && $i % $b != 0){
+         
+      }
+   }
+}
+
+
+
+
+
 
 
 
