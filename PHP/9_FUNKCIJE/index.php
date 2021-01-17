@@ -220,8 +220,7 @@
       vrednost koju ona vraća). */
       HorizontalnaLinija();
 
-      function racunanjePlate($meseci,$pocetna){
-         $povisica = 3000;
+      function racunanjePlate($meseci,$pocetna,$povisica){
          $ukupnoNovca = 0;
          for($i = 0; $i < $meseci; $i++){
             if($i == 0) {
@@ -231,9 +230,9 @@
                $ukupnoNovca = $ukupnoNovca + ($pocetna+$povisica*$i);
             }
          }
-         echo "<p>Ukupno novca koji ste zaradili za $meseci meseci sa pocetnom platom od $pocetna i povisicom od $povisica je $ukupnoNovca dinara</p>";
+         echo "<p>9.) Ukupno novca koji ste zaradili za $meseci meseci sa pocetnom platom od $pocetna i povisicom od $povisica je $ukupnoNovca dinara</p>";
       }
-      racunanjePlate(3,40000);
+      racunanjePlate(3,40000,3000);
 
       /* 10. Napraviti niz celih brojeva.
       Ispisati sve neparne brojeve ovog niza
@@ -241,13 +240,61 @@
       Pozvati funkciju i testirati je. */
       HorizontalnaLinija();
       $niz = [1,2,3,4,5];
-      echo "<p>Neparni brojevi niza su: </p>";
+      echo "10.) Neparni brojevi niza su:";
       for($i=0; $i<count($niz); $i++){
          if(isOdd($i)){
-           echo "<span style='color:red'>$i</span";
+           echo "<span style='color:red'>$i ,</span>";
          }
       }
+      /*  11. Napraviti funkciju brojNeparnih kojoj se
+      kao parametar prosleđuje niz celih brojeva,
+      a funkcija prebrojava i vraća koliko neparnih
+      brojeva ima prosleđeni niz.
+      Pozvati funkciju i testirati je.*/
+      HorizontalnaLinija();
+      function brojNeparnih($nizBr){
+         $brojacNeparnih = 0;
+         for($i=0; $i<count($nizBr); $i++){
+            if($nizBr[$i] % 2 == 1){
+            $brojacNeparnih++;
+            }
+         }
+         return $brojacNeparnih;
+      }
+      $niz = [1,2,3,4,5,6,7,8];
+      echo "11.) Broj neparnih brojeva u nizu je: ".brojNeparnih($niz);
 
+      /*12. U jednom gradu je od ponedeljka do petka,
+      tačno u podne, merena temperatura
+      vazduha. Izmerene temperature su zapisane
+      u obliku asocijativnog niza
+      datum/temperatura. Osmisliti funkciju (ili
+      više njih) koja će na ekranu plavom bojom
+      ispisati dan, datum i temperaturu kada je
+      temperatura bila najniža, a crvenom bojom
+      ispisati dan, datum i temperaturu kada je
+      temperatura bila najviša.
+      Testirati implementirani kod.  */
+      HorizontalnaLinija();
+      $merenja = array(
+         "ponedeljak 11.1.2021" => 10,
+         "utorak 12.1.2021" => 1,       
+         "sreda 13.1.2021" => 7,       
+         "cetvrtak 14.1.2021" => 2,       
+         "petak 15.1.2021" => 2     
+         );
+      function najnizaTemp($merenja){
+         $temperature = array_values($merenja);
+         $najniza = $temperature[0];
+      foreach ($merenja as $key => $value) {
+         if($najniza > $value){
+            $najniza = $value;
+            $datumNajniza = $key;
+         }
+      }
+      echo "<p style='color:blue'>$datumNajniza sa temperaturom od $najniza stepeni</p>";
+      }
+      najnizaTemp($merenja);
     ?>
 </body>
 </html>
