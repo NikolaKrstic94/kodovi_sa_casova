@@ -5,7 +5,6 @@
    //include_once "film.php"; // Isto kao include samo proverava da li je vec ukljucen dati fajl i ako jeste ne ukljucuje ga ponovo
    require_once "film.php"; // isto kao i require samo proverava da li je vec ukljucen dati fajl i ako jeste ne ukljucuje gap onovo
    require_once "pacijent.php";
-   require_once "autobus.php";
 
 
 
@@ -51,12 +50,61 @@
       }
    }
 
+   //Napraviti funkciju VekFilmova kojoj se prosledjuje niz filmova i ceo broj(vek), a funkcija ispisuje samo one filmove koji su stvoreni u prosledjenom veku.
 
-   $film1 = new Film("Kill Bill", "Quentin Tarantino", 2003, 8.7, array(1,2,3,4,5));
+   function vekFilmova($niz,$vek){
+      foreach ($niz as $film) {
+         $godIzdanja = $film->getGodina();
+         $vekIzdanja = ceil($godIzdanja / 100);
+         if($vekIzdanja == $vek){
+            $film->stampaj();
+         }
+      }
+   }
 
-   $film2 = new Film("Titanik", "James Cameron", 1997, 9.2, array(1,2,3,4,5)); 
+
+   /* Napraviti funkciju osrednjiFilm kojoj se prosleđuje
+niz filmova a ona vraća film koji je najbliži
+prosečnoj oceni svih filmova. */
+
+   function OsrednjiFilm($nizFilmova){
+      $prosecnaOcena = prosecnaOcena($nizFilmova);
+      $trenutnaRazlika = abs($nizFilmova[0]->getOcena() - $prosecnaOcena);
+
+      foreach ($nizFilmova as $film) {
+         if(abs($film->getOcena() - $prosecnaOcena) < $trenutnaRazlika){
+            $trenutnaRazlika = $film->getOcena() - $prosecnaOcena;
+         }
+      }
+      foreach ($nizFilmova as $film) {
+         if(abs($film->getOcena() - $prosecnaOcena) == $trenutnaRazlika){
+            return $film;
+         }
+      }
+   }
+
+   /* Napraviti funkciju najmanjaOcenaNajboljeg kojoj
+se prosleđuje niz filmova a ona određuje najbolji
+film i ispisuje njegovu najslabiju ocenu. */
+
+   function najmanjaOcenaNajboljeg($nizFilmova){
+      $trenutnaNajboljaOcena = 0;
+      foreach ($nizFilmova as $film) {
+         if($film->getOcena() > $trenutnaNajboljaOcena){
+            $trenutnaNajboljaOcena = $film->getOcena();
+         }
+      }
+
+   }
+
+
+
+
+   $film1 = new Film("Kill Bill", "Quentin Tarantino", 2003, array(1,2,3,4,5));
+
+   $film2 = new Film("Titanik", "James Cameron", 1997, array(1,2,3,4,5)); 
    
-   $film3 = new Film("300", "Zack Snyder", 2006, 7.6, array(1,2,3,4,5));
+   $film3 = new Film("300", "Zack Snyder", 2006, array(1,2,3,4,5));
 
    $filmovi = array($film1, $film2, $film3);
 
@@ -79,6 +127,12 @@
       echo "<hr>";
       echo "Prosecna ocena ovog filma je: ".$film1->prosek($film1->getOceneKorisnika());
       
+      echo "<p>Filmovi koji su izasli u 21. veku:</p>";
+      vekFilmova($filmovi,21);
+
+      echo "<p>Osrednji film je:</p>";
+      OsrednjiFilm($filmovi)->stampaj();
+
 
    // ZA PACIJENT.PHP
    echo "<p>PACIJENT ZADATAK</p>";

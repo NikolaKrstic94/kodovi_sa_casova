@@ -5,17 +5,15 @@
         private $naslov;
         private $reziser;
         private $godina;
-        private $ocena;
-        private $oceneKorisnika;
+        private $ocene = [];
 
 
          //KONSTRUKTOR
-         public function __construct($n, $r, $g, $o, $ok){
+         public function __construct($n, $r, $g, $o){
             $this->setNaslov($n);
             $this->setReziser($r);
             $this->setGodina($g);
-            $this->setOcena($o);
-            $this->setOceneKorisnika($ok);
+            $this->setOcene($o);
          }
         //SETERI
         public function setNaslov($n){
@@ -31,19 +29,8 @@
                 $this->godina = 1800;
             }            
         }
-        public function setOcena($o){
-           if($o < 1){
-               $this->ocena = 1;
-           }
-           elseif($o <= 10){
-               $this->ocena = $o;
-           }
-           else {
-              $this->ocena = 10;
-           }
-        }
-        public function setOceneKorisnika($ok){
-           $this->oceneKorisnika = $ok;
+        public function setOcene($o){
+           $this->ocene = $o;
         }
 
         //GETERI
@@ -58,11 +45,8 @@
         public function getGodina(){
             return $this->godina;
         }
-        public function getOcena(){
-           return $this->ocena;
-        }
-        public function getOceneKorisnika(){
-           return $this->oceneKorisnika;
+        public function getOcene(){
+           return $this->ocene;
         }
 
         public function stampaj(){
@@ -81,22 +65,18 @@
                     <td>$this->godina</td>
                 </tr>
                 <tr>
-                    <td>Ocena filma:</td>
-                    <td>$this->ocena</td>
-                </tr>
-                <tr>
                     <td>Ocene korisnika:</td>
-                    <td>".implode(", ",$this->oceneKorisnika)."</td>
+                    <td>".implode(", ",$this->ocene)."</td>
                 </tr>
             </table>
             <hr>
             ";
         }
         
-        public function prosek($oceneKorisnika){
+        public function prosek(){
            $sumaOcena = 0;
            $brojacOcena = 0;
-           foreach ($oceneKorisnika as $ocena) {
+           foreach ($this->ocene as $ocena) {
               $sumaOcena += $ocena;
               $brojacOcena++;
            }
