@@ -1,0 +1,86 @@
+-- Kreiranje baze
+CREATE DATABASE moja_druga_baza;
+
+-- Brisanje baze
+DROP DATABASE moja_druga_baza;
+
+-- pravljenje baze i biranje charseta
+CREATE DATABASE skola
+CHARACTER SET utf16 COLLATE utf16_slovenian_ci;
+
+--  kreiranje tabele studenti
+CREATE TABLE studenti(
+    ime VARCHAR(30),
+    prezime VARCHAR(50)
+);
+
+CREATE DATABASE shop;
+
+-- kreiranje tabele customers
+CREATE TABLE customers(
+	id INT PRIMARY KEY,
+    name VARCHAR(25) NOT NULL,
+    address VARCHAR(255),
+    age INT,
+    salary DECIMAL(18,2) DEFAULT 500
+);
+
+-- kreiranje tabele ako ne postoji
+CREATE TABLE IF NOT EXISTS tasks(
+	task_id INT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    start_date DATE,
+	due_date DATE,
+    status TINYINT,
+    description TEXT
+);
+
+
+-- Dodavanje kolone u tabelu
+ALTER TABLE customers
+ADD active BOOLEAN;
+
+-- Dodavanje jos jedne kolone
+ALTER TABLE customers
+ADD state VARCHAR(90);
+
+-- Dodavanje jos jedne kolone
+ALTER TABLE customers
+ADD number_of_visits TINYINT;
+
+
+-- Dodavanje jos jedne kolone ali u tabeli tasks
+ALTER TABLE tasks
+ADD priority TINYINT DEFAULT 0;
+
+
+-- Unos novog korisnika u tebelu customers
+
+INSERT INTO customers (id, name, age, address,state, salary, number_of_visits, active )
+VALUES(1, "Ana", 23, "Narodnih heroja 25a", "Srbija", 530, 3, 1 );
+
+
+-- Unos kada se ne navoce polja vec samo vrednosti i moraju da se unose po redosledu koji je vec definisan
+
+INSERT INTO customers
+VALUES(2, "Bojana", "Bulevar Nemanjica", 54, 720, 1, "Srbija", 5);
+
+INSERT INTO `customers`(`id`, `name`, `address`, `age`, `salary`, `active`, `state`, `number_of_visits`)
+VALUES (3,"Vuk","Vizantijski bulevar 32", 27, 382, 0, "Srbija", 1);
+
+INSERT INTO `customers`
+
+VALUES (4, "Goran", "Visegradska 45", 40, 780, 1, "Srbija", 6),
+(5, "Dejan", "Studenticna bb", 52, 1060, 1, "Srbija", 12)
+
+
+/* zadaci */
+
+
+INSERT INTO `customers`(`id`, `name`, `address`, `age`, `salary`, `active`, `state`, `number_of_visits`) VALUES (6, "Nikola", "Velikih heroja", 26, 2000, 2, "Srbija", 20);
+
+
+INSERT INTO `customers`(`id`, `name`, `address`, `age`, `salary`, `active`, `state`, `number_of_visits`) VALUES (7, "Marko", "Marka Kraljevica", 29, 1800, 1, "Srbija", 50);
+
+-- Kada dodajemo a necemo da diramo nesto sto ima defaultnu vrednost, onda samo izostavimo pr. Salary
+INSERT INTO `customers`(`id`, `name`, `address`, `age`, `active`, `state`, `number_of_visits`) VALUES (8, "Milanko", "Milanko Kraljevica", 30, 1, "Srbija", 80);
