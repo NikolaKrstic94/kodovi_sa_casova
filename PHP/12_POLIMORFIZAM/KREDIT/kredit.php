@@ -17,7 +17,7 @@ abstract class Kredit{
       $this->setBrGod($brGod);
       $this->setTip($tip);
       self::$brojKredita++;
-      // echo "<p style='color:green'>Pozvan je konstruktor za klase kredit</p>";
+      echo "<p style='color:green'>Pozvan je konstruktor za klase kredit</p>";
    }
 
    //seteri
