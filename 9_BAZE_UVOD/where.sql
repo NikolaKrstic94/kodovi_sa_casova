@@ -120,6 +120,78 @@ SELECT `name`, `age`, `state` FROM `customers`
 ORDER BY `age` DESC;
 
 
+
+-- prikazi `id` ime i broj kupovina onog kupca koji je imao najvise kupovina
+
+SELECT `id`, `name`, number_of_visits
+FROM `customers`
+ORDER BY number_of_visits DESC
+LIMIT 1;
+
+
+-- MIN AND MAX
+
+SELECT MAX(age) AS "Najmanji broj godina"
+FROM customers;
+
+-- prikazi id, ime, adresu i najmanje godina (jednog) za ime nikola
+SELECT id, name, address, MIN(age) AS "najmanji broj godina"
+FROM customers
+WHERE name LIKE "Nikola";
+
+-- prebrojati kupce izmedju 25 i 50 godina
+SELECT COUNT(age) AS "Broj kupaca izmedju 25 i 50"
+FROM customers
+WHERE age BETWEEN 25 AND 50;
+
+-- vraca prosecnu vrednost svih redova u koloni
+SELECT AVG(age) AS "Prosecna starost svih kupaca"
+FROM customers;
+
+SELECT SUM(number_of_visits) AS "Ukupno poseta prodavnici"
+FROM customers;
+
+-- broji razlicita imena u bazi
+SELECT COUNT(DISTINCT name) AS "Broj razlicitih imena"
+FROM customers;
+
+-- prosecne godine onih koji imaju od 20 do 40
+
+SELECT AVG(age)
+FROM customers
+WHERE age>= 25 AND age<=50;
+
+
+-- suma plata po poridici
+
+SELECT name AS "Porodica", SUM(salary) AS "Suma plata po porodici"
+FROM customers
+GROUP BY name;
+
+
+/* U tabeli customers odrediti:
+
+– Minimalnu platu
+ */
+
+SELECT SUM(id) as "Broj radnika"
+FROM customers;
+
+--  Maksimalnu platu
+SELECT MAX(salary) as "Najveca plata"
+FROM customers;
+
+--  Ukupnu platu
+SELECT SUM(salary) as "Ukupna plata"
+FROM customers;
+
+-- Prosečnu platu
+SELECT AVG(salary) as "Prosecna plata"
+FROM customers;
+
+-- domaci 38.39.40 slajd
+
+-- 39 --
 /* Napraviti bazu podataka v`id`eoteka.
 ● U bazi v`id`eoteka, napraviti tabelu filmovi koja sadrži
 naredne kolone:
@@ -131,15 +203,16 @@ naredne kolone:
 – ocena –Decimalni broj */
 
 
--- prikazi `id` ime i broj kupovina onog kupca koji je imao najvise kupovina
+/* za dodavanje kolone u tabeli
 
-SELECT `id`, `name`, number_of_visits
-FROM `customers`
-ORDER BY number_of_visits desc
-LIMIT 1;
+ALTER TABLE table_name
+ADD column_name
+
+ALTER TABLE table_name
+DROP column_name
+
+ALTER TABLE table_name
+MODIFY COLUMN colum_name
 
 
--- MIN AND MAX
-
-SELECT MAX(age) AS "Najmanji broj godina"
-FROM customers;
+ */
