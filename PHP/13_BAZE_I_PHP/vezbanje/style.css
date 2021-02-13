@@ -1,0 +1,56 @@
+table {
+   border-collapse: collapse;
+   padding: 2px;
+   margin: 0;
+   /* border-spacing: 0px; */
+
+}
+table td, table th {
+   padding: 0;
+   border: 1px solid cornflowerblue;
+   padding: 2px;
+}
+
+table tr:nth-child(even){
+   color: #ff4335;
+}
+table tr:nth-child(odd){
+   color: cornflowerblue;
+}
+
+
+ul {
+   border: 1px solid cornflowerblue;
+   display: inline-block;
+   border-collapse: collapse;
+   margin-left: 15px;
+   padding-right: 10px;
+   list-style-type: circle;
+}
+
+ul:nth-child(even){
+   background-color: cornflowerblue;
+   border: 1px solid #ff4335;
+   list-style: none;
+}
+ul:nth-child(even) li::before{
+   content: "\2606";
+   margin-left: -1.5em;
+   color: white;
+   font-size: 10px;
+}
+ul:nth-child(odd){
+   color: cornflowerblue;
+   list-style: none;
+}
+
+ul:nth-child(odd) li::before{
+   content: "\2605";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  color: #ff4335;
+  display: inline-block;
+  font-size: 10px;
+  width: 1em;
+  margin-left: -1.5em;
+
+}
+

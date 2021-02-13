@@ -1,0 +1,41 @@
+.naslov {
+   text-align: center;
+}
+h3 {
+   text-align: center;
+}
+table {
+   border-collapse: collapse;
+   padding: 2px;
+   margin-top: 20px;
+   margin: 0 auto;
+   font-size: 20px;
+   /* border-spacing: 0px; */
+
+}
+table td, table th {
+   padding: 0;
+   border: 1px solid #29529c;
+   padding: 2px;
+}
+
+table tr:nth-child(even){
+   color: #ff4335;
+}
+table tr:nth-child(odd){
+   color: #29529c;
+}
+
+ul {
+   list-style-type: none;
+   text-align: center;
+   padding-left: 0;
+}
+ul li {
+   font-weight: bold;
+   margin-top: 10px;
+}
+.btn {
+   margin-top: 10px;
+   width: 200px;
+}
