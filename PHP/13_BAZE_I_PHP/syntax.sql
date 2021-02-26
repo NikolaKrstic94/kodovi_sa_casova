@@ -1,3 +1,68 @@
+CREATE TABLE IF NOT EXISTS users(
+   id UNSIGNED INT AUTO_INCREMENT,
+   username VARCHAR(50) UNIQUE NOT NULL,
+   pass VARCHAR(255) NOT NULL
+)ENGINE=InnoDB;
+
+CREATE TABLE IF NOT EXISTS profiles(
+   id  UNSIGNED INT AUTO_INCREMENT,
+   name VARCHAR(50) NOT NULL,
+   surname VARCHAR(50) NOT NULL,
+   gender CHAR(1),
+   dob DATE,
+   user_id UNSIGNED UNIQUE INT
+   FOREIGN KEY(user_id)
+   REFERENCES users(id);
+)ENGINE = InnoDB;
+
+
+CREATE TABLE IF NOT EXISTS followers(
+   id UNSIGNED INT AUTO_INCREMENT,
+   sender_id NOT NULL
+   FOREIGN KEY(sender_id)
+   REFERENCES users(id),
+   receiver_id NOT NULL
+   FOREIGN KEY (receiver_id)
+   REFERENCES users(id)
+)ENGINE = InnoDB;
+
+
+
+INSERT INTO profiles(name, surname, gender,dob, user_id)
+VALUES
+('Nikola', 'Krstic','m','2000-00-00')
+SELECT users.id
+FROM users;
+
+
+/* TABELE ZA objave i komentare mozda */
+
+
+CREATE TABLE IF NOT EXISTS comments(
+   id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+   text TEXT,
+   post_author_id INT UNSIGNED,
+    FOREIGN KEY(post_author_id)
+   REFERENCES objave(author_id),
+   post_id INT UNSIGNED ,
+    FOREIGN KEY(post_id)
+   REFERENCES objave(id)
+)ENGINE=InnoDB;
+
+
+
+
+
+FOREIGN KEY
+REFERENCES
+
+
+
+CREATE TABLE IF NOT EXISTS
+UNSIGNED INT AUTO_INCREMENT,
+UNIQUE NOT NULL,
+NOT NULL
+ENGINE=InnoDB
 ALTER TABLE
 ALTER TABLE
 ADD
