@@ -95,28 +95,28 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       $dobErr = dobValidation($dob);
    }
 
-   if($nameOld == $name){
-      $validated = false;
-      echo "HELLO!1";
-   }
-   if($surnameOld == $surname){
-      $validated = false;
-      echo "HELLO!2";
-   }
-   if($genderOld == $gender){
-      $validated = false;
-      echo "HELLO!3";
-   }
-   if($dobOld == $dob){
-      $validated = false;
-      echo "HELLO!4";
+   // if($nameOld == $name){
+   //    $validated = false;
+   //    echo "HELLO!1";
+   // }
+   // if($surnameOld == $surname){
+   //    $validated = false;
+   //    echo "HELLO!2";
+   // }
+   // if($genderOld == $gender){
+   //    $validated = false;
+   //    echo "HELLO!3";
+   // }
+   // if($dobOld == $dob){
+   //    $validated = false;
+   //    echo "HELLO!4";
 
-   }
-   if($bioOld == $bio){
-      $validated = false;
-      echo "HELLO!5";
+   // }
+   // if($bioOld == $bio){
+   //    $validated = false;
+   //    echo "HELLO!5";
 
-   }
+   // }
 
 
    if ($validated) {
@@ -132,9 +132,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       $dobOld = $dob;
       $bioOld = $bio;
    }
-   else {
-      echo "You have to change all your parameters";
-   }
+   // else {
+   //    echo "You have to change all your parameters";
+   // }
 
 }
   $male = $female = $other = "";
