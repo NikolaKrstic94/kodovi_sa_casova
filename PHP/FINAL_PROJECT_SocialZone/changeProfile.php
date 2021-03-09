@@ -11,8 +11,6 @@ if (!(empty($_SESSION["id"]))) {
 
 
 $nameErr = $surnameErr = $bioErr= "";
-if (isset($id)) {
-}
 $sql = "SELECT profiles.name AS name, profiles.surname AS surname, profiles.gender AS gender, profiles.dob AS dob, profiles.user_id, profiles.bio AS bio, users.id FROM profiles
 INNER JOIN users
 ON users.id = profiles.user_id
@@ -56,11 +54,6 @@ if (textValidation($surnameOld)) {
       $bioErr = "Your bio is empty! Add something!";
    }
 }
- /*   $arrayOld = array($nameOld, $surnameOld, $genderOld, $dobOld, $bioOld);
-
-function allFieldsChanged($arrayOld, ){
-      if($nameOld != $name)
-   } */
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -94,29 +87,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       $validated = false;
       $dobErr = dobValidation($dob);
    }
-
-   // if($nameOld == $name){
-   //    $validated = false;
-   //    echo "HELLO!1";
-   // }
-   // if($surnameOld == $surname){
-   //    $validated = false;
-   //    echo "HELLO!2";
-   // }
-   // if($genderOld == $gender){
-   //    $validated = false;
-   //    echo "HELLO!3";
-   // }
-   // if($dobOld == $dob){
-   //    $validated = false;
-   //    echo "HELLO!4";
-
-   // }
-   // if($bioOld == $bio){
-   //    $validated = false;
-   //    echo "HELLO!5";
-
-   // }
 
 
    if ($validated) {
