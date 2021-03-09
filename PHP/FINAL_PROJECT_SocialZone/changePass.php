@@ -41,8 +41,8 @@ $oldPass = $newPass = $retypedPass = $newPassErr = $oldPassErr = $retypedPassErr
          $sql = "SELECT pass FROM users
                   WHERE id = $id;";
          $result = $conn->query($sql);
-         $red = $result->fetch_assoc();
-         $password = $red["pass"];
+         $row = $result->fetch_assoc();
+         $password = $row["pass"];
          if(md5($_POST["oldPass"]) == $password){
               // Password == Retype password
             if($newPass != $retypedPass){
