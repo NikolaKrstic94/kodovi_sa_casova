@@ -18,7 +18,7 @@ function dobValidation($dob){
    if($dob == 'NULL'){
       return "0000-00-00";
    }
-    elseif(isset($dob)){
+    elseif(empty($dob)){
         return false; //Sme da bude prazno
     }
     elseif($dob < "1900-01-01"){

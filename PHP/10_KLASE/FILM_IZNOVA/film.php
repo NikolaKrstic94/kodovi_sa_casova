@@ -6,29 +6,30 @@ class Film{
    private $godinaIzdanja;
    private $ocene;
 
-   // konstruktor 
-   public function __construct($n, $r, $g, $o){
-      $this->setNaslov($n);
-      $this->setReziser($r);
-      $this->setGodinaIzdanja($g);
-      $this->setOcene($o);
-   }
 
-   // seteri
-   public function setNaslov($n){
-      $this->naslov = $n;
-   }
-   public function setReziser($r){
-      $this->reziser = $r;
-   }
-   public function setGodinaIzdanja($g){
-      $this->godinaIzdanja = $g;
-   }
-   public function setOcene($o){
-      $this->ocene = $o;
-   }
 
-   // geteri
+   // konstruktori
+   public function __construct($naslov, $reziser, $godinaIzdanja, $ocene){
+      $this->setNaslov($naslov);
+      $this->setReziser($reziser);
+      $this->setGodinaIzdanja($godinaIzdanja);
+      $this->setOcene($ocene);
+   }
+   //seteri
+   public function setNaslov($naslov){
+      $this->naslov = $naslov;
+   }
+   public function setReziser($reziser){
+      $this->reziser = $reziser;
+   }
+   public function setGodinaIzdanja($godinaIzdanja){
+      $this->godinaIzdanja = $godinaIzdanja;
+   }
+   public function setOcene($ocene){
+      $this->ocene = $ocene;
+   }
+   // getteri
+
    public function getNaslov(){
       return $this->naslov;
    }
@@ -41,8 +42,7 @@ class Film{
    public function getOcene(){
       return $this->ocene;
    }
-
-   // metode 
+   // metode
    public function stampaj(){
       echo "<ul>
          <li>{$this->getNaslov()}</li>
@@ -60,4 +60,26 @@ class Film{
    }
 
 }
+
+class ShortFilm extends Film{
+   private $trajanje;
+
+   // konstruktor
+   public function __construct($naslov, $reziser, $godinaIzdanja, $ocene, $trajanje){
+      parent::__construct($naslov, $reziser, $godinaIzdanja, $ocene);
+      $this->setTrajanje($trajanje);
+   }
+   // seteri
+   public function setTrajanje($trajanje){
+      $this->trajanje = $trajanje;
+   }
+   // geteri
+   public function getTrajanje(){
+      return $this->trajanje;
+   }
+   public function prosek(){
+      parent::prosek();
+   }
+}
+
  ?>

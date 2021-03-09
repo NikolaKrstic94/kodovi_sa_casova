@@ -97,27 +97,27 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
    if($nameOld == $name){
       $validated = false;
-      echo $validated;
+      echo "HELLO!1";
    }
    if($surnameOld == $surname){
       $validated = false;
-      echo $validated;
+      echo "HELLO!2";
    }
    if($genderOld == $gender){
       $validated = false;
-      echo $validated;
-
+      echo "HELLO!3";
    }
    if($dobOld == $dob){
       $validated = false;
-      echo $validated;
+      echo "HELLO!4";
 
    }
    if($bioOld == $bio){
       $validated = false;
-      echo $validated;
+      echo "HELLO!5";
 
    }
+
 
    if ($validated) {
       $q = "UPDATE `profiles`
@@ -126,26 +126,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       $conn->query($q);
 
       // after submiting the form, this sets proper values to be shown in the form
-      // $nameOld = $name;
-      // $surnameOld = $surname;
-      // $genderOld = $gender;
-      // $dobOld = $dob;
-      // $bioOld = $bio;
+      $nameOld = $name;
+      $surnameOld = $surname;
+      $genderOld = $gender;
+      $dobOld = $dob;
+      $bioOld = $bio;
    }
    else {
       echo "You have to change all your parameters";
    }
 
 }
-
-$male = $female = $other = "";
-if ($genderOld == "m") {
-   $male = "checked";
-} elseif ($genderOld == "f") {
-   $female = "checked";
-} elseif ($genderOld == "o") {
-   $other = "checked";
-}
+  $male = $female = $other = "";
+   if ($genderOld == "m") {
+      $male = "checked";
+   } elseif ($genderOld == "f") {
+      $female = "checked";
+   } elseif ($genderOld == "o") {
+      $other = "checked";
+   }
 ?>
 <h5 class="centeredText pt-3">Change your profile information:</h5>
 <form action="changeProfile.php" method="POST">
@@ -224,4 +223,20 @@ if ($genderOld == "m") {
 //    else {
 //          echo "<p>Error adding user in table users: " . $conn->error . "</p>";
 //    }
+ -->
+<!--
+
+
+Cao Bojane! Trebalo mi je malo vremena da se prisaberem i da poverujem u ovo sto citam. Malo je reci da mi je drago sto sam preporucen! Nisam verovao da cu ovoliko brzo dobiti sansu! Sve sto mogu da kazem je da cu je oberucke prihvatiti i dati sve od sebe!
+
+Zanima me sta se podrazumeva pod probnim radom pa ako bi mogao da mi napises jos poneki detalj o tome. Da bih se bolje spremio. Veliko hvala i nadam se da cu opravdati preporuku!
+
+Nikola
+
+Hvala puno na odgovoru, onda je dogovoreno, cujemo se u 10h u ponedeljak, bicu online!
+
+
+
+
+
  -->

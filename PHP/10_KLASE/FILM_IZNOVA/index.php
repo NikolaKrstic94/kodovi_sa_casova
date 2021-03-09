@@ -21,6 +21,7 @@
       }
    }
 
+
    /* prosecnaOcena kojoj se
    prosleđuje niz filmova, a koja određuje i vraća
    prosečnu ocenu svih filmova. */
@@ -100,11 +101,16 @@
 
    $film1 = new Film("Kill Bill", "Quentin Tarantino", 2003, array(9.5,8,6,9,10));
 
-   $film2 = new Film("Titanik", "James Cameron", 1997, array(8,8,8.3,9,9.5)); 
-   
+   $film2 = new Film("Titanik", "James Cameron", 1997, array(8,8,8.3,9,9.5));
+
    $film3 = new Film("300", "Zack Snyder", 2006, array(7,4,6,8,7));
 
-   $filmovi = array($film1, $film2, $film3);
+   $shortFilm = new ShortFilm("Naslov", "Reziser", 2000, [9.2, 8.8, 7, 6,], 20);
+
+   echo "<hr>";
+   echo $shortFilm->prosek();
+
+   $filmovi = array($film1, $film2, $film3, $shortFilm);
    echo "<p>Spisak svih filmova je: </p>";
    foreach ($filmovi as $film) {
       $film->stampaj();
@@ -128,7 +134,7 @@
    echo "Najmanja ocena bilo kog filma je:". najmanjaOcena($filmovi);
    echo "<hr>";
 
-   
+
 
     ?>
 </body>

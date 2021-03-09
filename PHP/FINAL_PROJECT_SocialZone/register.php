@@ -43,9 +43,9 @@
             $validated = false;
             $dobErr = dobValidation($dob);
         }
-        else {
-           $dob = $conn->real_escape_string($dob);
-        }
+      //   else {
+      //      $dob = $conn->real_escape_string($dob);
+      //   }
 
         // Username validation
         if(usernameValidation($username, $conn)){
@@ -90,9 +90,8 @@
                 $result = $conn->query($q);
                 $red = $result->fetch_assoc();
                 $id = $red['id'];
-                $dob = 'NULL';
                 $q = "INSERT INTO `profiles`(`name`, `surname`, `gender`, `dob`, `user_id`)
-                        VALUES ('$name', '$surname', '$gender', $dob, '$id')";
+                        VALUES ('$name', '$surname', '$gender', '$dob', '$id')";
 
                 if($conn->query($q)) {
                     echo "<p class='success text-center p-0 m-0'>Successfully registered!</p>";
